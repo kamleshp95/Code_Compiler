@@ -26,7 +26,7 @@ function App() {
 
   // Loading state variable to show spinner
   // while fetching data
-//   const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const options = {
     fontSize: fontSize,
@@ -34,7 +34,7 @@ function App() {
 
   // Function to call the compile endpoint
   function compile() {
-//     setLoading(true);
+    setLoading(true);
     if (userCode === ``) {
       return;
     }
@@ -49,7 +49,7 @@ function App() {
         setUserOutput(res.data.output);
       })
       .then(() => {
-//         setLoading(false);
+        setLoading(false);
       });
   }
 
@@ -95,11 +95,11 @@ function App() {
             ></textarea>
           </div>
           <h4>Output:</h4>
-//           {loading ? (
-//             <div className="spinner-box">
-//               <img src={spinner} alt="Loading..." />
-//             </div>
-//           ) : (
+          {loading ? (
+            <div className="spinner-box">
+              <img src={spinner} alt="Loading..." />
+            </div>
+          ) : (
             <div className="output-box">
               <pre>{userOutput}</pre>
               <button
@@ -111,8 +111,7 @@ function App() {
                 Clear
               </button>
             </div>
-//           )
-}
+          )}
         </div>
       </div>
     </div>
